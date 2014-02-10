@@ -17,7 +17,7 @@ Installation
 
 ::
 
-   $ pip install nhk-api --pre
+   $ pip install nhk-api
 
 Usage
 =====
