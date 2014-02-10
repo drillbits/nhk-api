@@ -44,8 +44,8 @@ class ProgramGuide(object):
         :param date: Specifies the broadcasting date.
         :type date: datetime.date
         """
-        area = AreaChoices.detect(area)
-        service = ServiceChoices.detect(service)
+        area = AreaChoices.detect(area).code
+        service = ServiceChoices.detect(service).code
         url = self._build_url('pg', 'list', area, service, self._to_ymd(date))
         payload = {'key': self.api_key}
         response = requests.get(url, params=payload)
@@ -66,9 +66,9 @@ class ProgramGuide(object):
         :param date: Specifies the broadcasting date.
         :type date: datetime.date
         """
-        area = AreaChoices.detect(area)
-        service = ServiceChoices.detect(service)
-        genre = GenreChoices.detect(genre)
+        area = AreaChoices.detect(area).code
+        service = ServiceChoices.detect(service).code
+        genre = GenreChoices.detect(genre).code
         url = self._build_url('pg', 'genre', area, service, genre,
                               self._to_ymd(date))
         payload = {'key': self.api_key}
@@ -88,8 +88,8 @@ class ProgramGuide(object):
         :param program_id: The program ID.
         :type program_id: str
         """
-        area = AreaChoices.detect(area)
-        service = ServiceChoices.detect(service)
+        area = AreaChoices.detect(area).code
+        service = ServiceChoices.detect(service).code
         url = self._build_url('pg', 'info', area, service, program_id)
         payload = {'key': self.api_key}
         response = requests.get(url, params=payload)
@@ -105,8 +105,8 @@ class ProgramGuide(object):
             station.
         :type service: str
         """
-        area = AreaChoices.detect(area)
-        service = ServiceChoices.detect(service)
+        area = AreaChoices.detect(area).code
+        service = ServiceChoices.detect(service).code
         url = self._build_url('pg', 'now', area, service)
         payload = {'key': self.api_key}
         response = requests.get(url, params=payload)

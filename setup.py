@@ -31,6 +31,7 @@ install_requires = [
 ]
 
 tests_require = [
+    'testfixtures',
 ]
 
 entry_points = {
