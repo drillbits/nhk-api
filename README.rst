@@ -2,6 +2,9 @@
 nhk-api
 =======
 
+.. image:: https://drone.io/github.com/drillbits/nhk-api/status.png
+   :target: https://drone.io/github.com/drillbits/nhk-api/latest
+
 Python client for NHK API.
 
 Requirements
